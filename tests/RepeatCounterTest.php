@@ -6,11 +6,11 @@
         {
             $findWord = 'foo';
             $stringToSearch = "Foo!";
-            $newCounter = new RepeatCounter;
+            $newCounter = new RepeatCounter();
 
-            $result = RepeatCounter-CountRepeats($findWord, $stringToSearch);
+            $result = $newCounter->CountRepeats($findWord, $stringToSearch);
 
-            $this->assertEquals(1, $results);
+            $this->assertEquals(1, $result);
         }
         //
         // function test_match_in_sentence()
@@ -19,7 +19,7 @@
         //     $stringToSearch = "The word is BaR.";
         //     $newCounter = new RepeatCounter;
         //
-        //     $result = RepeatCounter-CountRepeats($findWord, $stringToSearch);
+        // $result = $newCounter->CountRepeats($findWord, $stringToSearch);
         //
         //     $this->assertEquals(1, $results);
         // }
@@ -30,7 +30,7 @@
         //     $stringToSearch = "The word is FOO. It is common for the FOO the live in a cave near the FOO mountains.";
         //     $newCounter = new RepeatCounter;
         //
-        //     $result = RepeatCounter-CountRepeats($findWord, $stringToSearch);
+        // $result = $newCounter->CountRepeats($findWord, $stringToSearch);
         //
         //     $this->assertEquals(3, $results);
         // }
