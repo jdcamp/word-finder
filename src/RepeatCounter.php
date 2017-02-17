@@ -3,16 +3,19 @@
       function CountRepeats($myWord, $myString)
       {
             $foundCounter = 0;
-            $punctuation = array('.', '!', '?', ',', '(', ')', '[', ']',';', ':');
+            //$punctuation = array('.', '!', '?', ',', '(', ')', '[', ']',';', ':');
+            $punctuation = ".,:\";[]{}?!())'";
             $myWord = strtoupper($myWord);
-            
             $myString = strtoupper($myString);
-            $myString = str_split($myString);
-            $myString = array_diff($myString, $punctuation);
-            $myString = implode($myString);
-            if($myString == $myWord)
-            {
-                ++$foundCounter;
+            $myString = explode(" ", $myString);
+            foreach ($myString as $myStringWords) {
+                $myStringWords = trim($myStringWords, $punctuation);
+                //$myStringWords = array_diff($myStringWords, $punctuation);
+                //$myStringWords = implode($myStringWords);
+                if($myStringWords == $myWord)
+                {
+                    ++$foundCounter;
+                }
             }
                 return $foundCounter;
         }
