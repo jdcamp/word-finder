@@ -10,7 +10,7 @@
 
             $result = $newCounter->CountRepeats($findWord, $stringToSearch);
 
-            $this->assertEquals(0, $result);
+            $this->assertEquals(0, $result['counter']);
         }
         function test_match_word()
         {
@@ -20,7 +20,7 @@
 
             $result = $newCounter->CountRepeats($findWord, $stringToSearch);
 
-            $this->assertEquals(1, $result);
+            $this->assertEquals(1, $result['counter']);
         }
 
         function test_match_in_sentence()
@@ -31,7 +31,7 @@
 
         $result = $newCounter->CountRepeats($findWord, $stringToSearch);
 
-            $this->assertEquals(1, $result);
+            $this->assertEquals(1, $result['counter']);
         }
 
         function test_match_multiple_in_sentence()
@@ -42,7 +42,7 @@
 
         $result = $newCounter->CountRepeats($findWord, $stringToSearch);
 
-            $this->assertEquals(3, $result);
+            $this->assertEquals(3, $result['counter']);
         }
         function test_match_multiple_in_sentence_skip_partial_match()
         {
@@ -52,7 +52,7 @@
 
         $result = $newCounter->CountRepeats($findWord, $stringToSearch);
 
-            $this->assertEquals(2, $result);
+            $this->assertEquals(2, $result['counter']);
         }
 
     }
