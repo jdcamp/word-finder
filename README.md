@@ -11,8 +11,8 @@ _Program will output a number base on how many times a given word is found in a 
 Behavior | Input | Output
 --- | --- | ---
 Tests two words to see if they match regardless of case and punctuation |Find Word:"foo" Find In Word: "Foo!"| 1
-Find a given word in a string |Find Word:"The word is BaR." Find In Word: "bar"| 1
-Find a given word multiple times in a string |Find Word:"The word is FOO. It is common for the FOO the live in a cave near the FOO mountains." Find In Word: "foo"| 3
+Find a given word in a string |Find Word:"bar" Find In Word: "The word is BaR."| 1
+Find a given word multiple times in a string |Find Word:"foo" Find In Word: "The word is FOO. It is common for the FOO the live in a cave near the FOO mountains."| 3
 
 ## Setup/Installation Requirements
 
