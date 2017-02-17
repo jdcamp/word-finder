@@ -2,10 +2,23 @@
 {% block title %}
     Results{% endblock %}
 {% block results %}
-    <p>Search Word: {{word}}</p>
-    <p>Search Text:<br>
-        {{text}}
-    </p>
-    <p>Number of Occurrences: {{count}}</p>
+    {% set c = '' %}
+    <p>Search Word:
+        {{word}}</p>
+    <p>Search Text:<br></p>
+    {% set counter = 0 %}
+    {% for key in text_array %}
+        {% if key == true %}
+            {% set c = c ~ '<span class="highlight">' ~ original_array[counter] ~ ' </span>' %}
+        {% else %}
+            {% set c = c ~ original_array[counter] ~ " " %}
+        {% endif %}
+        {% set counter = counter + 1 %}
+    {% endfor %}
+    {% autoescape %}
+        <p>{{c | raw}}</p>
+    {% endautoescape %}
+    <p>Number of Occurrences:
+        {{count}}</p>
 
 {% endblock %}

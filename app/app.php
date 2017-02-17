@@ -21,7 +21,7 @@
         $searchWord = $_POST['word-to-find'];
         $searchText = $_POST['search-string'];
         $numberOfFinds = $newCounter->CountRepeats($searchWord, $searchText);
-        return $app['twig']->render('word_finder_results.html.twig', array('word'=>$searchWord, 'text' => $searchText, 'count' => $numberOfFinds));
+        return $app['twig']->render('word_finder_results.html.twig', array('word'=>$searchWord, 'text' => $searchText, 'count' => $numberOfFinds['counter'], 'text_array' => $numberOfFinds['text_array'], 'original_array' => $numberOfFinds['original_string_array']));
     });
 
 
