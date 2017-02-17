@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+        <title>Word Finder{% block html_title %}{% endblock %}
+        </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h3>Word Finder</h3>
+            </div>
+            <form class="form-group" action="/finder" method="post">
+                <label for="word-to-find">Please enter a word to find</label>
+                <input type="text" name="word-to-find" value=""> <br>
+
+                <label for="search-string">Please enter text to search</label>
+                <input type="text" name="search-string" value=""> <br>
+
+                <button type="submit" name="submit" class="button">Enter</button>
+            </form>
+            {% block results %}{% endblock %}
+        </div>
+    </body>
+</html>

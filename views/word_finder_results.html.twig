@@ -1,0 +1,11 @@
+{% extends 'word_finder.html.twig' %}
+{% block title %}
+    Results{% endblock %}
+{% block results %}
+    <p>Search Word: {{word}}</p>
+    <p>Search Text:<br>
+        {{text}}
+    </p>
+    <p>Number of Occurrences: {{count}}</p>
+
+{% endblock %}
